@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vig: A Casino MOBA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>The Vig: Casino</h1>
+
+    <div id="scoreboard">
+        <span id="blue-score" class="team-score blue">Blue Crew Edge: $0</span>
+        <span id="target-score"> / $500,000 </span>
+        <span id="red-score" class="team-score red">Red Crew Edge: $0</span>
+    </div>
+
+    <div id="game-container">
+        <canvas id="moba-map" width="800" height="600"></canvas>
+        
+        <div id="player-ui">
+            <div id="hero-name">Sam "Ace" Rothstein</div>
+            <div id="stats">
+                Level: <span id="level">1</span> | Cash: <span id="cash">$500</span>
+            </div>
+
+            <div id="resources">
+                <label>Control (Abilities):</label>
+                <div class="bar-container"><div id="willpower-bar" class="bar primary" style="width: 100%;"></div></div>
+                
+                <label>Focus (Ultimate):</label>
+                <div class="bar-container"><div id="heat-bar" class="bar ultimate" style="width: 0%;"></div></div>
+            </div>
+            
+            <div id="abilities">
+                <button id="ability-q" onclick="useAbility('Q')">Q: The Eye</button>
+                <button id="ability-w" onclick="useAbility('W')">W: The Payout</button>
+                <button id="ability-e" onclick="useAbility('E')">E: The Chip Run</button>
+                
+                <button id="rage-button" onclick="activateRage()" disabled>R: Activate The Vig</button>
+                <button id="ability-r" onclick="useAbility('R')" disabled>THE SYSTEM (Ultimate)</button>
+                
+                <div class="guard-key">Hold **[G]** for The Cleanup (Guard)</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
